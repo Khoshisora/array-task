@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class RegexArrayLineValidator implements ArrayLineValidator {
 
-  private static final String SEPARATOR_REGEX = "[\\s,;\\-\\u2013\\u2014]";
+  private static final String SEPARATOR_REGEX = "[\\s,;]";
   private static final String NUMBER_REGEX = "\\d{1,9}";
   private static final String BLANK_LINE_REGEX = "\\s*";
   private static final String NUMBERS_LINE_REGEX = SEPARATOR_REGEX + "*" + NUMBER_REGEX
