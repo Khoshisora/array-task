@@ -11,9 +11,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Reads lines, skips invalid ones and creates an entity for each valid line.
- */
 public class ArrayImportServiceImpl implements ArrayImportService {
 
   private static final Logger LOGGER = LogManager.getLogger();

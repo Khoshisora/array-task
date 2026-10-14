@@ -87,10 +87,6 @@ public class InMemoryArrayRepository extends AbstractArraySubject implements Arr
     return sorted;
   }
 
-  /**
-   * Subscribes the new observer to the repository and to every stored array, so it receives both
-   * the membership events and the changes of the elements.
-   */
   @Override
   protected void onObserverAdded(ArrayObserver observer) {
     for (IntArrayEntity entity : entities) {
@@ -111,9 +107,6 @@ public class InMemoryArrayRepository extends AbstractArraySubject implements Arr
     }
   }
 
-  /**
-   * Finds the stored position of the array, the repository owns the identifiers.
-   */
   private int indexOf(IntArrayEntity entity) {
     int index = NO_INDEX;
     if (entity != null) {
@@ -144,9 +137,6 @@ public class InMemoryArrayRepository extends AbstractArraySubject implements Arr
     }
   }
 
-  /**
-   * Pairs the array with the values the warehouse keeps for it.
-   */
   private ArrayAggregate buildAggregate(IntArrayEntity entity) {
     Warehouse warehouse = Warehouse.getInstance();
     OptionalLong sum = warehouse.findSum(entity);

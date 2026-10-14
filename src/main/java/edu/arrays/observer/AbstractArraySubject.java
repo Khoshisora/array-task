@@ -49,7 +49,6 @@ public abstract class AbstractArraySubject implements ArraySubject {
     }
   }
 
-
   private List<ArrayObserver> snapshotObservers() {
     return new ArrayList<>(observers);
   }

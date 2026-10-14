@@ -13,13 +13,7 @@ import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Keeps the sum, average, min and max of every stored array and recalculates them as soon as an
- * array changes.
- *
- * <p>Singleton, so the whole application reads the same cached values. Deliberately not thread
- * safe, the task forbids the concurrent variant.</p>
- */
+
 public final class Warehouse {
 
   private static final Logger LOGGER = LogManager.getLogger();
@@ -33,9 +27,6 @@ public final class Warehouse {
     this.statisticsService = statisticsService;
   }
 
-  /**
-   * Returns the single warehouse of the application, creating it on the first call.
-   */
   public static Warehouse getInstance() {
     if (instance == null) {
       instance = new Warehouse(new ArrayStatisticsServiceImpl());
@@ -44,18 +35,12 @@ public final class Warehouse {
     return instance;
   }
 
-  /**
-   * Recalculates and stores the aggregates of the array.
-   */
   public void recalculate(IntArrayEntity entity) {
     ArrayStatistics recalculated = calculate(entity);
     statistics.put(entity.getId(), recalculated);
     LOGGER.info("Warehouse recalculated for array {}: {}", entity.getId(), recalculated);
   }
 
-  /**
-   * Drops the aggregates of an array that is no longer stored.
-   */
   public void forget(IntArrayEntity entity) {
     statistics.remove(entity.getId());
     LOGGER.info("Warehouse forgot array {}", entity.getId());
@@ -97,10 +82,6 @@ public final class Warehouse {
     return new ArrayStatistics(sum, average, min, max);
   }
 
-  /**
-   * Returns the cached aggregates, calculating them without caching when the array was never
-   * registered in the warehouse.
-   */
   private ArrayStatistics statisticsOf(IntArrayEntity entity) {
     ArrayStatistics cached = statistics.get(entity.getId());
     ArrayStatistics result = cached;

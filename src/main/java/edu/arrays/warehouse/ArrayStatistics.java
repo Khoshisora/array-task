@@ -4,10 +4,7 @@ import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.OptionalLong;
 
-/**
- * Immutable aggregates of a single array. An aggregate of an array without elements is empty, an
- * empty average of a non-empty array cannot be produced.
- */
+
 public final class ArrayStatistics {
 
   private static final int PRIME = 31;
