@@ -4,7 +4,7 @@ import edu.arrays.entity.IntArrayEntity;
 import java.util.Comparator;
 import java.util.UUID;
 
-public final class IntArrayComparators {
+public final class IntArrayComparator {
 
   private static final Comparator<UUID> NATURAL_ORDER = Comparator.naturalOrder();
   private static final Comparator<UUID> ID_ORDER = Comparator.nullsFirst(NATURAL_ORDER);
@@ -20,7 +20,7 @@ public final class IntArrayComparators {
 
   private static final int EMPTY_ARRAY_RANK = Integer.MIN_VALUE;
 
-  private IntArrayComparators() {
+  private IntArrayComparator() {
   }
 
   private static int firstElement(IntArrayEntity entity) {

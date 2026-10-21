@@ -23,7 +23,7 @@ class IntArrayComparatorsTest {
   @Test
   void byIdShouldOrderSmallerIdentifierFirst() {
     // given
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_ID;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_ID;
     IntArrayEntity smallerId = new IntArrayEntity(SINGLE_ELEMENT);
     smallerId.setId(SMALL_ID);
     IntArrayEntity biggerId = new IntArrayEntity(TWO_ELEMENTS);
@@ -37,7 +37,7 @@ class IntArrayComparatorsTest {
   @Test
   void byIdShouldOrderArrayWithoutIdentifierFirst() {
     // given
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_ID;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_ID;
     IntArrayEntity withoutId = new IntArrayEntity(SINGLE_ELEMENT);
     IntArrayEntity withId = new IntArrayEntity(TWO_ELEMENTS);
     withId.setId(SMALL_ID);
@@ -50,7 +50,7 @@ class IntArrayComparatorsTest {
   @Test
   void bySizeShouldOrderFewerElementsFirst() {
     // given
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_SIZE;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_SIZE;
     IntArrayEntity fewer = new IntArrayEntity(SINGLE_ELEMENT);
     IntArrayEntity more = new IntArrayEntity(TWO_ELEMENTS);
     // when
@@ -62,7 +62,7 @@ class IntArrayComparatorsTest {
   @Test
   void byFirstElementShouldOrderSmallerFirstElementFirst() {
     // given
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_FIRST_ELEMENT;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_FIRST_ELEMENT;
     IntArrayEntity smaller = new IntArrayEntity(FIRST_SMALLER);
     IntArrayEntity bigger = new IntArrayEntity(FIRST_BIGGER);
     // when
@@ -74,7 +74,7 @@ class IntArrayComparatorsTest {
   @Test
   void byFirstElementShouldOrderEmptyArrayFirst() {
     // given
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_FIRST_ELEMENT;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_FIRST_ELEMENT;
     IntArrayEntity empty = new IntArrayEntity(NO_ELEMENTS);
     IntArrayEntity notEmpty = new IntArrayEntity(FIRST_SMALLER);
     // when
@@ -86,7 +86,7 @@ class IntArrayComparatorsTest {
   @Test
   void bySizeShouldSortAWholeList() {
     // given
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_SIZE;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_SIZE;
     IntArrayEntity two = new IntArrayEntity(TWO_ELEMENTS);
     IntArrayEntity one = new IntArrayEntity(SINGLE_ELEMENT);
     IntArrayEntity none = new IntArrayEntity(NO_ELEMENTS);

@@ -1,6 +1,6 @@
 package edu.arrays.main;
 
-import edu.arrays.comparator.IntArrayComparators;
+import edu.arrays.comparator.IntArrayComparator;
 import edu.arrays.entity.IntArrayEntity;
 import edu.arrays.exception.ArrayException;
 import edu.arrays.factory.IntArrayFactory;
@@ -110,9 +110,9 @@ public class ArrayApplication {
   }
 
   private void logSortedCollections(ArrayRepository repository) {
-    Comparator<IntArrayEntity> byId = IntArrayComparators.BY_ID;
-    Comparator<IntArrayEntity> bySize = IntArrayComparators.BY_SIZE;
-    Comparator<IntArrayEntity> byFirstElement = IntArrayComparators.BY_FIRST_ELEMENT;
+    Comparator<IntArrayEntity> byId = IntArrayComparator.BY_ID;
+    Comparator<IntArrayEntity> bySize = IntArrayComparator.BY_SIZE;
+    Comparator<IntArrayEntity> byFirstElement = IntArrayComparator.BY_FIRST_ELEMENT;
     logSorted(repository, "by id", byId);
     logSorted(repository, "by size", bySize);
     logSorted(repository, "by first element", byFirstElement);

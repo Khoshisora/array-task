@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import edu.arrays.comparator.IntArrayComparators;
+import edu.arrays.comparator.IntArrayComparator;
 import edu.arrays.entity.IntArrayEntity;
 import edu.arrays.exception.ArrayException;
 import edu.arrays.observer.RecordingArrayObserver;
@@ -266,7 +266,7 @@ class InMemoryArrayRepositoryTest {
     IntArrayEntity smaller = new IntArrayEntity(OTHER_ELEMENTS);
     repository.add(bigger);
     repository.add(smaller);
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_SIZE;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_SIZE;
     // when
     List<IntArrayEntity> actual = repository.sortBy(comparator);
     // then
@@ -281,7 +281,7 @@ class InMemoryArrayRepositoryTest {
     IntArrayEntity smaller = new IntArrayEntity(OTHER_ELEMENTS);
     repository.add(bigger);
     repository.add(smaller);
-    Comparator<IntArrayEntity> comparator = IntArrayComparators.BY_SIZE;
+    Comparator<IntArrayEntity> comparator = IntArrayComparator.BY_SIZE;
     repository.sortBy(comparator);
     // when
     List<IntArrayEntity> actual = repository.findAll();
